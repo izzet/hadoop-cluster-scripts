@@ -1,19 +1,16 @@
 #!/bin/bash
 
-# Import utils
-. ./_utils.sh
+echo "⏳ Adding hadoop user..."
 
-# Check sudo privileges
-utils-check-sudo
+# Import vars
+eval $(cat $(dirname "$0")/../credentials.txt)
 
-# Import credentials
-eval "$(cat credentials.txt)"
-
-# Create Hadoop group
-addgroup hadoop
+if [[ -z "${HADOOP_USER_NAME}" ]]; then
+    echo "❌ Credentials not found"
+    exit
+fi
 
 # Create user
-useradd -m -p $(openssl passwd -1 $HADOOP_USER_PWD) -s /bin/bash -g hadoop $HADOOP_USER_NAME
+adduser -m -p $(openssl passwd -1 $HADOOP_USER_PWD) -s /bin/bash -G wheel $HADOOP_USER_NAME
 
-# Add user to sudo
-adduser $HADOOP_USER_NAME sudo
+echo "✅ hadoop user added"
