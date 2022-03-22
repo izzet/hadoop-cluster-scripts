@@ -2,5 +2,6 @@
 
 eval "$(cat env)"
 
-# hibench.report.dir    /tmp/hibench/logs
-cp -R $HIBENCH_HOME/conf/ $HIBENCH_CONF_DIR/
+pssh -h clients rm -rf $HIBENCH_HOME/
+pssh -h clients mkdir -p $HIBENCH_HOME/
+pssh -h clients cp -R $HIBENCH_TMP/* $HIBENCH_HOME/

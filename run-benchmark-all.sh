@@ -10,11 +10,4 @@ fi
 
 eval "$(cat $(dirname "$0")/env)"
 
-$HIBENCH_HOME/bin/workloads/micro/terasort/hadoop/run.sh
-
-CURRENT_LOG_DIR=/tmp/hadoop/results/$1-$2/hibench
-
-rm -rf $CURRENT_LOG_DIR
-mkdir -p $CURRENT_LOG_DIR
-
-cp -R $HIBENCH_LOG_DIR/* $CURRENT_LOG_DIR/
+pssh -t 0 -h $(dirname "$0")/clients $SCRIPTS_HOME/run-benchmark.sh $1 $2
