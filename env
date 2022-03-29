@@ -1,15 +1,19 @@
+export USER_NAME=iyildrim
+export USER_HOME=/home/$USER_NAME
+export USER_MNT=/mnt/ssd/$USER_NAME
+
 export JAVA_BIN=/bin/java
 export JAVA_LINK=$(readlink -f $(which java))
 export JAVA_HOME=${JAVA_LINK/$JAVA_BIN/""}
 # JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.322.b06-1.el7_9.x86_64/jre
 
 export HADOOP_VERSION=3.2.2
-export HADOOP_HOME=/home/cc/common/hadoop-$HADOOP_VERSION
+export HADOOP_HOME=$USER_HOME/hadoop-$HADOOP_VERSION
 export HADOOP_CORE_SITE=$HADOOP_HOME/etc/hadoop/core-site.xml
 # export HADOOP_DIR_DATANODE=/home/hadoop/data/dataNode
 # export HADOOP_DIR_NAMENODE=/home/hadoop/data/nameNode
-export HADOOP_DIR_DATANODE=/tmp/hadoop/data/datanode
-export HADOOP_DIR_NAMENODE=/tmp/hadoop/data/namenode
+export HADOOP_DIR_DATANODE=$USER_MNT/hadoop/data/datanode
+export HADOOP_DIR_NAMENODE=$USER_MNT/hadoop/data/namenode
 export HADOOP_ENV_FILE=$HADOOP_HOME/etc/hadoop/hadoop-env.sh
 export HADOOP_ENV_HADOOP_HOME="export HADOOP_HOME"
 export HADOOP_ENV_HADOOP_HOME_0="# $HADOOP_ENV_HADOOP_HOME="
@@ -21,22 +25,22 @@ export HADOOP_ENV_JAVA_HOME_1="$HADOOP_ENV_JAVA_HOME=$JAVA_HOME"
 # export HADOOP_ENV_LOG_DIR="export HADOOP_LOG_DIR=/tmp/hadoop/logs"
 export HADOOP_HDFS_SITE=$HADOOP_HOME/etc/hadoop/hdfs-site.xml
 export HADOOP_MAPRED_SITE=$HADOOP_HOME/etc/hadoop/mapred-site.xml
-export HADOOP_MASTER_NODE=10.52.0.45
-export HADOOP_MASTER_NODE_NAME=symbios-head
+export HADOOP_MASTER_NODE=172.20.101.32
+export HADOOP_MASTER_NODE_NAME=ares-comp-32
 export HADOOP_WORKERS_FILE=$HADOOP_HOME/etc/hadoop/workers
 export HADOOP_YARN_SITE=$HADOOP_HOME/etc/hadoop/yarn-site.xml
 
 export HIBENCH_VERSION=7.1.1
-export HIBENCH_TMP=/home/cc/common/hibench-$HIBENCH_VERSION
-export HIBENCH_HOME=/tmp/hibench
+export HIBENCH_TMP=$USER_HOME/hibench-$HIBENCH_VERSION
+export HIBENCH_HOME=$USER_MNT/hibench
 export HIBENCH_CONF_DIR=$HIBENCH_HOME/conf
 export HIBENCH_CONF_FILE=$HIBENCH_CONF_DIR/hibench.conf
 export HIBENCH_LOG_DIR=$HIBENCH_HOME/report
 export HIBENCH_TERASORT_CONF_FILE=$HIBENCH_CONF_DIR/workloads/micro/terasort.conf
 
-export PAT_HOME=/home/cc/common/pat
+export PAT_HOME=$USER_HOME/pat
 export PAT_CONF_FILE=$PAT_HOME/collect/config
-export PAT_WORKER_DATA_DIR=/tmp/pat/data
-export PAT_WORKER_SCRIPTS_DIR=/tmp/pat
+export PAT_WORKER_DATA_DIR=$USER_MNT/pat/data
+export PAT_WORKER_SCRIPTS_DIR=$USER_MNT/pat/scripts
 
-export SCRIPTS_HOME=/home/cc/common/scripts/hadoop
+export SCRIPTS_HOME=$USER_HOME/scripts

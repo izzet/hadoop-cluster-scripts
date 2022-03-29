@@ -9,4 +9,4 @@ fi
 
 eval "$(cat $(dirname "$0")/env)"
 
-pssh -t 0 -h clients $SCRIPTS_HOME/prepare-benchmark.sh $1
+mpssh -t 0 -f $(dirname "$0")/clients "$SCRIPTS_HOME/prepare-benchmark.sh $1"

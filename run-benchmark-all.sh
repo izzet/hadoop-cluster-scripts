@@ -10,4 +10,4 @@ fi
 
 eval "$(cat $(dirname "$0")/env)"
 
-pssh -t 0 -h $(dirname "$0")/clients $SCRIPTS_HOME/run-benchmark.sh $1 $2
+mpssh -t 0 -f $(dirname "$0")/clients "$SCRIPTS_HOME/run-benchmark.sh $1 $2"
