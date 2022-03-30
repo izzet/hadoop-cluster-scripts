@@ -13,8 +13,8 @@ eval "$(cat $(dirname "$0")/env)"
 sed -i "s@hibench.default.map.parallelism@#hibench.default.map.parallelism@g" $HIBENCH_CONF_FILE
 sed -i "s@hibench.default.shuffle.parallelism@#hibench.default.shuffle.parallelism@g" $HIBENCH_CONF_FILE
 sed -i "s@hibench.scale.profile@#hibench.scale.profile@g" $HIBENCH_CONF_FILE
-echo "hibench.default.map.parallelism     10" >> $HIBENCH_CONF_FILE
-echo "hibench.default.shuffle.parallelism     10" >> $HIBENCH_CONF_FILE
+echo "hibench.default.map.parallelism     8" >> $HIBENCH_CONF_FILE
+echo "hibench.default.shuffle.parallelism     8" >> $HIBENCH_CONF_FILE
 echo "hibench.scale.profile     $2" >> $HIBENCH_CONF_FILE
 
 sed -i "s@hibench.terasort.huge.datasize@#hibench.terasort.huge.datasize@g" $HIBENCH_TERASORT_CONF_FILE
