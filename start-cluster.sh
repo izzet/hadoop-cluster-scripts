@@ -9,9 +9,14 @@ fi
 
 eval "$(cat $(dirname "$0")/env)"
 
-# Start Hadoop cluster
+# Arrange workers
 cp workers-$1 workers
 cp workers-$1 $HADOOP_WORKERS_FILE
+
+# Clear datanodes
+mpssh -f workers "rm -rf $HADOOP_DIR_DATANODE"
+
+# Start Hadoop cluster
 $HADOOP_HOME/sbin/start-all.sh
 
 # Show status
