@@ -1,3 +1,6 @@
+export HADOOP_MASTER_NODE=172.20.101.1
+export HADOOP_MASTER_NODE_NAME=ares-comp-01
+
 export USER_NAME=iyildrim
 export USER_HOME=/home/$USER_NAME
 export USER_MNT=/mnt/ssd/$USER_NAME
@@ -25,8 +28,6 @@ export HADOOP_ENV_JAVA_HOME_1="$HADOOP_ENV_JAVA_HOME=$JAVA_HOME"
 # export HADOOP_ENV_LOG_DIR="export HADOOP_LOG_DIR=/tmp/hadoop/logs"
 export HADOOP_HDFS_SITE=$HADOOP_HOME/etc/hadoop/hdfs-site.xml
 export HADOOP_MAPRED_SITE=$HADOOP_HOME/etc/hadoop/mapred-site.xml
-export HADOOP_MASTER_NODE=172.20.101.32
-export HADOOP_MASTER_NODE_NAME=ares-comp-32
 export HADOOP_WORKERS_FILE=$HADOOP_HOME/etc/hadoop/workers
 export HADOOP_YARN_SITE=$HADOOP_HOME/etc/hadoop/yarn-site.xml
 
@@ -40,6 +41,7 @@ export HIBENCH_TERASORT_CONF_FILE=$HIBENCH_CONF_DIR/workloads/micro/terasort.con
 
 export PAT_HOME=$USER_HOME/pat
 export PAT_CONF_FILE=$PAT_HOME/collect/config
+export PAT_LOG_DIR=$PAT_HOME/collect/results
 export PAT_WORKER_DATA_DIR=$USER_MNT/pat/data
 export PAT_WORKER_SCRIPTS_DIR=$USER_MNT/pat/scripts
 
