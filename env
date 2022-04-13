@@ -31,14 +31,6 @@ export HADOOP_MAPRED_SITE=$HADOOP_HOME/etc/hadoop/mapred-site.xml
 export HADOOP_WORKERS_FILE=$HADOOP_HOME/etc/hadoop/workers
 export HADOOP_YARN_SITE=$HADOOP_HOME/etc/hadoop/yarn-site.xml
 
-export HIBENCH_VERSION=7.1.1
-export HIBENCH_TMP=$USER_HOME/hibench-$HIBENCH_VERSION
-export HIBENCH_HOME=$USER_MNT/hibench
-export HIBENCH_CONF_DIR=$HIBENCH_HOME/conf
-export HIBENCH_CONF_FILE=$HIBENCH_CONF_DIR/hibench.conf
-export HIBENCH_LOG_DIR=$HIBENCH_HOME/report
-export HIBENCH_TERASORT_CONF_FILE=$HIBENCH_CONF_DIR/workloads/micro/terasort.conf
-
 export PAT_HOME=$USER_HOME/pat
 export PAT_CONF_FILE=$PAT_HOME/collect/config
 export PAT_LOG_DIR=$PAT_HOME/collect/results

@@ -17,7 +17,7 @@ mkdir -p $USER_MNT/hadoop/results
 touch $USER_MNT/hadoop/results/$1-$2-$3-$4.txt
 
 # Prepare file sizes
-FILE_SIZE="16MB" && [[ $2 == "heavy" ]] && FILE_SIZE="80MB"
+FILE_SIZE="128MB" && [[ $2 == "heavy" ]] && FILE_SIZE="640MB"
 
 # Run DFSIO benchmark
 $HADOOP_HOME/bin/hadoop jar $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-client-jobclient-$HADOOP_VERSION-tests.jar \

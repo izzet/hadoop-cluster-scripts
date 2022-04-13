@@ -16,7 +16,7 @@ mkdir -p $USER_MNT/hadoop/results
 touch $USER_MNT/hadoop/results/$1-$2-$3-prep.txt
 
 # Prepare file sizes
-FILE_SIZE="16MB" && [[ $2 == "heavy" ]] && FILE_SIZE="80MB"
+FILE_SIZE="128MB" && [[ $2 == "heavy" ]] && FILE_SIZE="640MB"
 
 # Check if prepare is requested for read 
 if [ $3 == "read" ]; then
